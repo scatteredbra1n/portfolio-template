@@ -8,7 +8,7 @@ $top-spacing: 30px;
 $border-radius: 25px;
 
 
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+// @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
 .container {
   display: flex;
@@ -28,7 +28,6 @@ $border-radius: 25px;
   background: #FFF;
   height: auto;
   .hero-image {
-    background-image: url($hero-image);
     background-size: cover;
     width: 100%;
     height: 250px;
@@ -40,20 +39,18 @@ $border-radius: 25px;
     justify-content: center;
     .avatar {
       border: 7px solid gray;
-      background: red;
+      background: #FFF;
       height: 85px;
       width: 85px;
       border-radius: 50%;
       position: absolute;
       top: -50px;
-      background-image: url($avatar-image);
       background-size: contain;
       background-position: top center;
     }
   }
   
   .intro {
-    // margin-top: -30px;
     padding: 50px;
     text-align: center;
   }

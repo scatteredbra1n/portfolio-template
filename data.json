@@ -1,0 +1,12 @@
+{
+	"name": "ASDF",
+	"website": "www.google.com",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.",
+	"socialMedia": {
+		"facebook": "asdf.com",
+		"instagram": "asdf.com",
+		"linkedin": "asdf.com",
+		"twitter": "asdf.com",
+		"email": "asdf.com"
+	}
+}

@@ -11,10 +11,10 @@
     "build:scss": "npm run build:scss:css && npm run build:scss:autoprefixer",
     "build:copy:images": "npx copyfiles ./src/assets/images/* ./dist/images --flat",
     "build:copy:fonts:lato": "npx copyfiles ./node_modules/@fontsource/lato/files/* ./dist/fonts --flat",
-    "build:copy:fonts:fontawesome": "npx copyfiles ./node_modules/@fortawesome/fortawesome-free/webfonts/* ./dist/fonts --flat",
-    "build:copy:html": "npx copyfiles ./src/**/*.html ./dist/ --flat",
-    "build:copy": "npm run copy:html && npm run build:copy:images && npm run build:copy:fonts:lato && npm run build:copy:fonts:fontawesome",
-    "build": "npm run build:clean && npm run build:copy && npm run build:scss",
+    "build:copy:fonts:fontawesome": "npx copyfiles ./node_modules/@fortawesome/fontawesome-free/webfonts/* ./dist/fonts --flat",
+    "build:ejs": "npx ejs-cli --base-dir src/views/ '{!(partials)/,*}*.ejs' --out dist/ --options data.json",
+    "build:copy": "npm run build:copy:images && npm run build:copy:fonts:lato && npm run build:copy:fonts:fontawesome",
+    "build": "npm run build:clean && npm run build:ejs && npm run build:copy && npm run build:scss",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -34,6 +34,8 @@
   "devDependencies": {
     "autoprefixer": "^10.2.4",
     "copyfiles": "^2.4.1",
+    "ejs": "^3.1.5",
+    "ejs-cli": "^2.2.1",
     "postcss": "^8.2.4",
     "postcss-cli": "^8.3.1",
     "rimraf": "^3.0.2",

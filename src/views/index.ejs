@@ -1,0 +1,48 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title><%= name %>'s Portfolio</title>
+  <meta name="description" content="<%= name %>'s Portfolio">
+  <meta name="author" content="<%= name %>">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="main.css">
+
+</head>
+
+<body>
+	<main class="container">
+	  <section class="hero">
+	    <div class="hero-image" style="background-image:url('https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2195&q=80')"></div>
+	    <div class="avatar-wrapper">
+	      <div class="avatar" style="background-image:url('https://thumbs.dreamstime.com/b/default-avatar-photo-placeholder-profile-icon-eps-file-easy-to-edit-default-avatar-photo-placeholder-profile-icon-124557887.jpg')"></div>
+	    </div>
+	    <div class="intro">
+	      <h1><%= name %></h1>
+	      <h2><%= website %></h2>
+	      <p><%= description %></p>
+	      <ul class="social-media">
+	      	<% if(socialMedia.facebook) { %>
+	        	<li><a href="<%= socialMedia.facebook %>"><span class="fa fa-facebook"></span></a></li>
+	        <% } %>
+	        <% if(socialMedia.twitter) { %>
+	        	<li><a href="<%= socialMedia.twitter %>"><span class="fa fa-twitter"></span></a></li>
+	        <% } %>
+	        <% if(socialMedia.instagram) { %>
+	        	<li><a href="<%= socialMedia.instagram %>"><span class="fa fa-instagram"></span></a></li>
+	        <% } %>
+	        <% if(socialMedia.linkedin) { %>
+	        	<li><a href="<%= socialMedia.linkedin %>"><span class="fa fa-linkedin"></span></a></li>
+	        <% } %>
+	        <% if(socialMedia.email) { %>
+	        	<li><a href="<%= socialMedia.email %>"><span class="fa fa-envelope"></span></a></li>
+	        <% } %>
+	    </ul>
+	    </div>
+	  </section>
+	</main>
+</body>
+</html>
