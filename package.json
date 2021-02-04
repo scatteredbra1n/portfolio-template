@@ -1,0 +1,43 @@
+{
+  "name": "portfolio-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:clean": "npx rimraf ./dist",
+    "build:scss:lint": "npx sass-lint --config ./.sass-lint.yml './src/styles/**/*.scss' --syntax scss --verbose",
+    "build:scss:autoprefixer": "npx postcss ./dist/*.css --use autoprefixer -d dist/",
+    "build:scss:css": "sass ./src/styles:./dist --color --error-css --update --trace --style=compressed",
+    "build:scss": "npm run build:scss:css && npm run build:scss:autoprefixer",
+    "build:copy:images": "npx copyfiles ./src/assets/images/* ./dist/images --flat",
+    "build:copy:fonts:lato": "npx copyfiles ./node_modules/@fontsource/lato/files/* ./dist/fonts --flat",
+    "build:copy:fonts:fontawesome": "npx copyfiles ./node_modules/@fortawesome/fortawesome-free/webfonts/* ./dist/fonts --flat",
+    "build:copy:html": "npx copyfiles ./src/**/*.html ./dist/ --flat",
+    "build:copy": "npm run copy:html && npm run build:copy:images && npm run build:copy:fonts:lato && npm run build:copy:fonts:fontawesome",
+    "build": "npm run build:clean && npm run build:copy && npm run build:scss",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jchaike/portfolio-template.git"
+  },
+  "author": "Josh Chaiken <me@joshchaiken.com> (https://www.joshchaiken.com/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jchaike/portfolio-template/issues"
+  },
+  "homepage": "https://github.com/jchaike/portfolio-template#readme",
+  "dependencies": {
+    "@fontsource/lato": "^4.1.0",
+    "@fortawesome/fontawesome-free": "^5.15.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.4",
+    "copyfiles": "^2.4.1",
+    "postcss": "^8.2.4",
+    "postcss-cli": "^8.3.1",
+    "rimraf": "^3.0.2",
+    "sass": "^1.32.6",
+    "sass-lint": "^1.13.1"
+  }
+}
