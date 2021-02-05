@@ -15,7 +15,12 @@
     "build:ejs": "npx ejs-cli --base-dir src/views/ '{!(partials)/,*}*.ejs' --out dist/ --options data.json",
     "build:copy": "npm run build:copy:images && npm run build:copy:fonts:lato && npm run build:copy:fonts:fontawesome",
     "build": "npm run build:clean && npm run build:ejs && npm run build:copy && npm run build:scss",
-    "dev": "node server.js && echo 'Build'",
+    "dev:watch:styles": "npx onchange \"./src/styles/**/*.scss\" -- npm run build:scss",
+    "dev:watch:ejs": "npx onchange \"./src/views/**/*.ejs\" -- npm run build:ejs",
+    "dev:watch:assets": "npx onchange \"./src/assets/**/*\" -- npm run build:copy:images",
+    "dev:watch": "npm run dev:watch:styles && npm run dev:watch:ejs && npm run dev:watch:assets",
+    "dev:server": "npx live-server ./dist/ --port=3000 --watch=./src/**/*,./dist/**/* --open=/ --ignore=./dist/fonts/**/*",
+    "dev": "npm run build && npm run dev:server & npm run dev:watch",
     "production": "npm run build && node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -44,5 +49,9 @@
     "rimraf": "^3.0.2",
     "sass": "^1.32.6",
     "sass-lint": "^1.13.1"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.1",
+    "onchange": "^7.1.0"
   }
 }
