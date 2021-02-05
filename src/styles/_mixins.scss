@@ -1,0 +1,15 @@
+@function background-color($color-name) {
+	$selected-color: "";
+	
+	@if ($color-name == "primary") {
+		@return $background-color-primary;
+	}
+	
+	@else if ($color-name == "secondary") {
+		@return $background-color-secondary;
+	}
+
+	@else {
+		@error"Choose a valid color";
+	}
+}
