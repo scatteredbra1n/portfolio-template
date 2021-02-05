@@ -7,7 +7,7 @@
     "build:clean": "npx rimraf ./dist",
     "build:scss:lint": "npx sass-lint --config ./.sass-lint.yml './src/styles/**/*.scss' --syntax scss --verbose",
     "build:scss:autoprefixer": "npx postcss ./dist/*.css --use autoprefixer -d dist/",
-    "build:scss:css": "sass ./src/styles:./dist --color --error-css --update --trace --style=compressed",
+    "build:scss:css": "npx sass ./src/styles:./dist --color --error-css --update --trace --style=compressed",
     "build:scss": "npm run build:scss:css && npm run build:scss:autoprefixer",
     "build:copy:images": "npx copyfiles ./src/assets/images/* ./dist/images --flat",
     "build:copy:fonts:lato": "npx copyfiles ./node_modules/@fontsource/lato/files/* ./dist/fonts --flat",
