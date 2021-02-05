@@ -15,6 +15,8 @@
     "build:ejs": "npx ejs-cli --base-dir src/views/ '{!(partials)/,*}*.ejs' --out dist/ --options data.json",
     "build:copy": "npm run build:copy:images && npm run build:copy:fonts:lato && npm run build:copy:fonts:fontawesome",
     "build": "npm run build:clean && npm run build:ejs && npm run build:copy && npm run build:scss",
+    "dev": "node server.js && echo 'Build'",
+    "production": "npm run build && node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -29,7 +31,8 @@
   "homepage": "https://github.com/jchaike/portfolio-template#readme",
   "dependencies": {
     "@fontsource/lato": "^4.1.0",
-    "@fortawesome/fontawesome-free": "^5.15.2"
+    "@fortawesome/fontawesome-free": "^5.15.2",
+    "express": "^4.17.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.4",

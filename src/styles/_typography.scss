@@ -1,42 +1,39 @@
 @import "../../node_modules/@fontsource/lato/scss/mixins";
-$fa-font-path:         "fonts/";
+$fa-font-path: "fonts/";
+$lato-font-path: "fonts/";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/brands";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/icons";
 
 @include fontFace(
   $weight: 100,
   $display: fallback,
-  $fontDir: "./../node_modules/@fontsource/lato/files"
+  $fontDir: "fonts/"
 );
 @include fontFace(
   $weight: 300,
   $display: fallback,
-  $fontDir: "./../node_modules/@fontsource/lato/files"
+  $fontDir: "fonts/"
 );
 @include fontFace(
   $weight: 400,
   $display: fallback,
-  $fontDir: "./../node_modules/@fontsource/lato/files"
+  $fontDir: "fonts/"
 );
 @include fontFace(
   $weight: 500,
   $display: fallback,
-  $fontDir: "./../node_modules/@fontsource/lato/files"
+  $fontDir: "fonts/"
 );
 @include fontFace(
   $weight: 700,
   $display: fallback,
-  $fontDir: "./../node_modules/@fontsource/lato/files"
+  $fontDir: "fonts/"
 );
 @include fontFace(
   $weight: 900,
   $display: fallback,
-  $fontDir: "./../node_modules/@fontsource/lato/files"
+  $fontDir: "fonts/"
 );
-
-@font-face {
-
-}
 
 // /* latin-ext */
 // @font-face {
