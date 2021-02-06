@@ -1,39 +1,13 @@
-@import "../../node_modules/@fontsource/lato/scss/mixins";
 $fa-font-path: "fonts/";
 $lato-font-path: "fonts/";
+
+@import "../../node_modules/@fontsource/lato/scss/mixins";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/brands";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/icons";
 
-@include fontFace(
-  $weight: 100,
-  $display: fallback,
-  $fontDir: "fonts/"
-);
-@include fontFace(
-  $weight: 300,
-  $display: fallback,
-  $fontDir: "fonts/"
-);
-@include fontFace(
-  $weight: 400,
-  $display: fallback,
-  $fontDir: "fonts/"
-);
-@include fontFace(
-  $weight: 500,
-  $display: fallback,
-  $fontDir: "fonts/"
-);
-@include fontFace(
-  $weight: 700,
-  $display: fallback,
-  $fontDir: "fonts/"
-);
-@include fontFace(
-  $weight: 900,
-  $display: fallback,
-  $fontDir: "fonts/"
-);
+@each $fontWeight in (100, 300, 400, 500, 700, 900) {
+  @include fontFace($weight: $fontWeight, $display: fallback, $fontDir: $lato-font-path);
+}
 
 .large-header {
   font-size: 24px;
@@ -46,5 +20,5 @@ $lato-font-path: "fonts/";
 }
 
 .text-muted {
-  color: #787878
+  color: text-color(muted);
 }

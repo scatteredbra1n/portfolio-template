@@ -1,0 +1,28 @@
+$valid-breakpoints: "";
+@each $breakpoint-name, $breakpoint-value in $breakpoints {
+	$valid-breakpoints: "#{$valid-breakpoints} #{$breakpoint-name}";
+}
+
+@function is-valid-breakpoint($size) {
+    @each $breakpoint-name, $breakpoint-value in $breakpoints {
+        $valid: false;
+        @if ($breakpoint-name == $size) {
+            @return true;
+        }
+    }
+    @return false;
+}
+
+@mixin breakpoint($sizes...) {
+    @each $size in $sizes {
+        $breakpoint: map-get($breakpoints, $size);   
+        @if (is-valid-breakpoint($size)) {
+            @media (min-width: $breakpoint)  {
+                @content;
+            }    
+        } @else {
+            @error "#{$size} is a valid breakpoint. Valid breakpoints are#{$valid-breakpoints}";
+        }
+        
+    }
+}

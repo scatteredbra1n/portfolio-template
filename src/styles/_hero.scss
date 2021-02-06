@@ -1,15 +1,20 @@
 .hero {
+  @include breakpoint(sm) {
+    border-radius: $border-radius;
+  }
   position: relative;
-  border-radius: $border-radius;
   box-shadow: 0 0px 10px 0 rgba(0,0,0,.5);
   width: 700px;
   background: background-color(secondary);
   height: auto;
   .hero-image {
+    @include breakpoint(sm) {
+      height: 250px;
+      border-radius: $border-radius $border-radius 0 0;
+    }
     background-size: cover;
     width: 100%;
-    height: 250px;
-    border-radius: $border-radius $border-radius 0 0;
+    height: 150px;
   }
 
   

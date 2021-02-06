@@ -1,0 +1,5 @@
+@function font-size($font-style, $breakpoint: xs) {
+	@each $font-name, $font-size in $font-sizes {
+		@return map-get($font-size, $breakpoint)
+	}
+}

@@ -1,5 +1,21 @@
+$breakpoints: (
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px
+);
+
+$font-sizes: (
+	body: (sm: 15px, xs: 18px),
+	large-header: (sm: 30px, xs: 20px),
+	subhead: (sm: 18px, xs: 15px)
+);
+
 $background-color-primary: #F9F9F9;
 $background-color-secondary: #FFFFFF;
+
+$text-color: #000000;
+$text-muted: #787878;
 
 $top-spacing: 30px;
 $border-radius: 25px;

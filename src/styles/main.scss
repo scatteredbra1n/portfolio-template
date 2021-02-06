@@ -6,13 +6,23 @@
 @import "hero";
 @import "avatar";
 
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: background-color(primary);
-  min-height: 450px;
-  height: 100vh;
-  font-family: "Lato";
+body {
+	@include breakpoint(sm) {
+		font-size: font-size(body, sm);
+	}
+	font-family: "Lato";
+	font-size: font-size(body)
 }
 
+.container {
+	@include breakpoint(sm) {
+		align-items: center;
+		min-height: 650px;
+	}
+	display: flex;
+	align-items: top;
+	justify-content: center;
+	background: background-color(primary);
+	
+	height: 100vh;
+}

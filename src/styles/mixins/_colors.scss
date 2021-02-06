@@ -1,0 +1,25 @@
+@function background-color($color-name, $theme: light) {
+	$selected-color: "";
+	
+	@if ($color-name == "primary") {
+		@return $background-color-primary;
+	}
+	
+	@else if ($color-name == "secondary") {
+		@return $background-color-secondary;
+	}
+
+	@else {
+		@error"#{$color-name} is not a valid background color.";
+	}
+}
+
+@function text-color($color-name, $theme: light) {
+	@if ($color-name == "body") {
+		@return $text-body;
+	} @else if ($color-name == "muted") {
+		@return $text-muted;
+	} @else {
+		@error"#{$color-name} is not a valid text color.";
+	}
+}
