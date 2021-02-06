@@ -1,8 +1,40 @@
-$fa-font-path: "fonts/";
+$fa-font-path: "fonts";
 $lato-font-path: "fonts/";
+$fa-css-prefix: "fa";
 
 @import "../../node_modules/@fontsource/lato/scss/mixins";
-@import "../../node_modules/@fortawesome/fontawesome-free/scss/brands";
+
+@font-face {
+  font-family: 'Font Awesome';
+  font-style: normal;
+  font-weight: 400;
+  font-display: fallback;
+  src: url('#{$fa-font-path}/fa-regular-400.eot');
+  src: url('#{$fa-font-path}/fa-regular-400.eot?#iefix') format('embedded-opentype'),
+  url('#{$fa-font-path}/fa-regular-400.woff2') format('woff2'),
+  url('#{$fa-font-path}/fa-regular-400.woff') format('woff'),
+  url('#{$fa-font-path}/fa-regular-400.ttf') format('truetype'),
+  url('#{$fa-font-path}/fa-regular-400.svg#fontawesome') format('svg');
+}
+
+@font-face {
+  font-family: 'Font Awesome Brands';
+  font-style: normal;
+  font-weight: 400;
+  font-display: fallback;
+  src: url('#{$fa-font-path}/fa-brands-400.eot');
+  src: url('#{$fa-font-path}/fa-brands-400.eot?#iefix') format('embedded-opentype'),
+  url('#{$fa-font-path}/fa-brands-400.woff2') format('woff2'),
+  url('#{$fa-font-path}/fa-brands-400.woff') format('woff'),
+  url('#{$fa-font-path}/fa-brands-400.ttf') format('truetype'),
+  url('#{$fa-font-path}/fa-brands-400.svg#fontawesome') format('svg');
+}
+
+
+.fa { font-family: "Font Awesome"; font-weight: 400; font-style: normal; }
+.fab { font-family: "Font Awesome Brands"; font-weight: 400; font-style: normal; }
+
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/variables";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/icons";
 
 @each $fontWeight in (100, 300, 400, 500, 700, 900) {
