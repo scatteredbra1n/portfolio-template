@@ -1,20 +1,26 @@
+$hero-image-height-desktop: 250px;
+$hero-image-height-mobile: 150px;
+$hero-width-desktop: 700px;
+$hero-width-mobile: 100%;
+
 .hero {
   @include breakpoint(sm) {
     border-radius: $border-radius;
+    width: $hero-width-desktop;
   }
   position: relative;
   box-shadow: 0 0px 10px 0 rgba(0,0,0,.5);
-  width: 700px;
+  width: $hero-width-mobile;
   background: background-color(secondary);
   height: auto;
   .hero-image {
     @include breakpoint(sm) {
-      height: 250px;
+      height: $hero-image-height-desktop;
       border-radius: $border-radius $border-radius 0 0;
     }
     background-size: cover;
     width: 100%;
-    height: 150px;
+    height: $hero-image-height-mobile;
   }
 
   
