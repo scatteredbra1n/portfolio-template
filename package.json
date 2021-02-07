@@ -44,6 +44,7 @@
     "ejs": "^3.1.5",
     "ejs-cli": "^2.2.1",
     "express": "^4.17.1",
+    "heroku-ssl-redirect": "^0.1.1",
     "normalize-scss": "^7.0.1",
     "postcss": "^8.2.4",
     "postcss-cli": "^8.3.1",
