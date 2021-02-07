@@ -13,6 +13,7 @@ body {
 	font-family: "Lato";
 	font-size: font-size(body);
 	padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+	background: background-color(primary);
 }
 
 .container {
@@ -23,7 +24,5 @@ body {
 	display: flex;
 	align-items: top;
 	justify-content: center;
-	background: background-color(primary);
-	
 	height: 100vh;
 }
