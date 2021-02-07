@@ -14,5 +14,5 @@ if (ENV === 'production') {
   })
 }
 
-app.listen(PORT, () => console.log(`Your app is listening on port ${PORT}!`));
+app.listen(PORT, () => console.log(`Your app is listening on port ${PORT} running in ${ENV} mode.`));
 
